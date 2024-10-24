@@ -1,0 +1,21 @@
+#include <cmath> // for pow()
+
+bool checkArmstrong(int n) {
+    int dup = n, sum = 0, digits = 0;
+    
+    // Calculate the number of digits
+    int temp = n;
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+    
+    // Calculate the sum of each digit raised to the power of 'digits'
+    while (n > 0) {
+        int ld = n % 10;
+        sum += pow(ld, digits); // Raise each digit to the power of 'digits'
+        n /= 10;
+    }
+
+    return sum == dup; // Return true if Armstrong, else false
+}
