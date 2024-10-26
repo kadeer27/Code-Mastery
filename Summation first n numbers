@@ -1,0 +1,48 @@
+//Using Recursion
+
+#include <bits/stdc++.h>
+using namespace std;
+void num(int n,int sum)
+{
+    if(n<0)
+    {
+        cout<<"1="<<sum;
+        return;
+    }
+    if(n>1)
+        cout<<n<<"+";
+        
+    num(n-1,sum+n);
+    
+    
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    num(n,0);
+
+    return 0;
+}
+
+//Using For loop
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    int sum=0;
+    for(int i=n;i>0;i--)
+    {
+        sum+=i;
+        if(i>1)
+            cout<<i<<"+";
+    }
+    cout<<"1="<<sum;
+
+    return 0;
+}
